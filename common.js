@@ -45,30 +45,16 @@ function requestInfoSync(id) {
 	return kiss(JSON.parse(xhr.response, "http://panda.tv/"))
 }
 
-function showNotification(title, message, requireInteraction, callback) {
-	var opt = {
-		type: "basic",
-		title: title,
-		iconUrl: "icon128.png",
-		message: message,
-		requireInteraction: requireInteraction || false
-	}
-	if (callback !== undefined) {
-		chrome.notifications.create(opt, callback)
-	} else {
-		chrome.notifications.create(opt)
-	}
-}
 
 function showNotificationV2(info) {
+	//Firefox: Only 'type', 'iconUrl', 'title', and 'message' are supported.
 	var opt = {
 		type: "image",
 		title: info.hostName + "发车了!!!",
 		iconUrl: "icon128.png",
-		message: "车次『"+ info.roomName + "』, 点击通知上车!",
-		imageUrl: info.roomImg,
-		requireInteraction: true,
-		isClickable: true
+		message: "车次『"+ info.roomName + "』, 点击通知上车!"
+		// requireInteraction: true,
+		// isClickable: true
 	}
 	chrome.notifications.create(info.site + info.roomId, opt)
 }
@@ -189,4 +175,3 @@ function addAlarmHandler() {
 		}
 	})
 }
-

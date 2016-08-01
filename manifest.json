@@ -1,4 +1,9 @@
 {
+	"applications": {
+		"gecko": {
+			"id": "livenotification@wundereye.com"
+		}
+	},
 	"manifest_version": 2,
 	"name": "开播提醒",
 	"version": "1.0.1",
@@ -12,19 +17,19 @@
 		"scripts": ["common.js", "background.js"]
 	},
 	"browser_action": {
-		"default_popup": "popup.html"
+		"default_popup": "popup.html",
+		"default_icon": "icon128.png"
 	},
 
-	"author": "WunderEye",
 	"permissions": [
 		"http://www.panda.tv/",
 		"http://*.pdim.gs/",
 		"storage",
 		"notifications",
-		"background",
 		"alarms"
 	],
 	"options_ui": {
-		"page": "options.html"
+		"page": "options.html",
+		"open_in_tab": false
 	}
 }

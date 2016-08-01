@@ -3,6 +3,9 @@ body {
 	padding: 0;
 	margin: 10px 0;
 	color: #333;
+	/*font-size: 14px;*/
+	/*font-family: "Helvetica Neue", "Lucida Grande", sans-serif;*/
+	font-size: 75%;
 }
 
 p#empty {
